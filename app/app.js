@@ -3,7 +3,7 @@
     //module creation
     //first param: Module Name
     //second params: module names injected.
-    angular.module("goodServices",["header","login","register","product"]);
+    angular.module("goodServices",["header","login","register","product","common"]);
     
    //consuming the module
     angular.module("goodServices")

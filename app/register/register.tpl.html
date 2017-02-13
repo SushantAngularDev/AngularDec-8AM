@@ -15,5 +15,14 @@
                    class="form-control"  placeholder="Password">
         </div>
     </div>
+    <div class="form-group">
+        <label  class="control-label col-xs-2">Country</label>
+        <div class="col-xs-10">
+            <select class="form-control" ng-model="rc.selectedCountry"
+                    ng-options="country.code +'-'+country.name for country in rc.countries">
+                <option value="">Please Select</option>
+            </select>{{rc.selectedCountry}}
+        </div>
+    </div>
     {{rc.user}}
 </form>
