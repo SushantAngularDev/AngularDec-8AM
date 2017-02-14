@@ -27,7 +27,7 @@
         lookupSvc.getCountriesFromJson()
         .then( function(res){
             console.log(res);
-            vm.countries= res;
+            vm.countries= res.data.countries;
         })
         .catch(function(err){
             console.log(err);

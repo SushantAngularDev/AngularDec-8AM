@@ -36,15 +36,16 @@
             };
             
             this.getCountriesFromJson = function(){
-              //defer obj creation
+                //create defer object
+				//defer obj creation
                 var dfd= $q.defer();
                
                 $http.get("api/countries.json")
-                .then(function(response){
+                .then(function(response){   //positiveresponce
                     console.log(response);
-                    dfd.resolve(response.data.countries);
+                    dfd.resolve(response);
                 })
-                .catch(function(errorResponse){
+                .catch(function(errorResponse){  //negative responce
                       console.log(errorResponse);
                     dfd.reject("Error occured")
                 });
