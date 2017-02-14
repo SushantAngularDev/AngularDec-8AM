@@ -14,8 +14,8 @@
 
 <body>
     <div class="container" >
-        <div ng-controller="headerCtrl as hc"
-        ng-include="'app/header/header.tpl.html'">
+        <div ng-controller="headerCtrl as hc" class="cm-header">
+			<!--"ng-include="'app/header/header.tpl.html'"-->
            
         </div>
   
@@ -23,6 +23,9 @@
     <!-- common files -->
     <script src="app/common/common.js"></script>
     <script src="app/common/commonLookupService.js"></script>
+	<script src="app/common/commonBrandName.js"></script>
+	<script src="app/common/commonHeader.js"></script>
+	<script src="app/common/commonNumberOnly.js"></script>
     
      <!--header-->
     <script src="app/header/header.js"></script>
