@@ -1,5 +1,5 @@
 <div ng-controller="productsCtrl as pc">
-    <div class="row" ng-repeat="item in pc.products">
+    <div class="row" ng-repeat="item in pc.products | toupperCase">
         <div class="col-xs-6">
             <div class="thumbnail">
                 <img src="./images/{{item.image}}" alt="Sample Image">
