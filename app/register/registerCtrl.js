@@ -9,7 +9,19 @@
             console.log(vm.user);
         }
        // vm.countries = lookupSvc.getCountries();
-        
+        vm.errMsg={
+			color:"red"
+		};
+		
+		vm.DobRange = {
+           maxdate:"-18Y"
+        };
+		
+		vm.DateofReser = {
+            mindate: "0D",
+            maxdate: "+1M"
+        };
+		
         lookupSvc.getCountries()
         .then( function(res){
             console.log(res);

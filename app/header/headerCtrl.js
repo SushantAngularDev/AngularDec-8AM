@@ -3,7 +3,7 @@
     {
         var vm=this;
         vm.brandName="Good Services";
-        vm.navItems=["login","register","products"];
+        vm.navItems =["login","register","products","cart","logout"];
         vm.loginTemplate ="app/login/login.tpl.html";
         vm.registerTemplate ="app/register/register.tpl.html";
         vm.productsTemplate="app/product/product.tpl.html";
