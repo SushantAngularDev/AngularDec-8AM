@@ -1,33 +1,30 @@
 <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-     <!-- <a class="navbar-brand" href="#">{{hc.brandName}}</a> -->
-		<cm-brand-name></cm-brand-name>
-    </div>
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<!-- <a class="navbar-brand" href="#">{{hc.brandName}}</a> -->
+			<cm-brand-name></cm-brand-name>
+		</div>
 
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-       
-        <li ng-click="hc.loadView('test')"><a href="#">Offer</a></li>
-       
-      </ul>
-     
-      <ul class="nav navbar-nav navbar-right">
-        <li ng-repeat="nav in hc.navItems"
-            ng-click="hc.loadView(nav)"><!--navItem is a Collection to access it ( hc.navItem )is used and nav is a variable as a type of "string"--> 
-            <a href="#">{{nav}}</a><!--it will access the value one by one -->
-        </li>
-      </ul>
-    </div>
-       
-    </div>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+
+				<li ng-click="hc.loadView('test')"><a href="#">Offer</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li ng-repeat="nav in hc.navItems" ng-click="hc.loadView(nav)">
+					<!--navItem is a Collection to access it ( hc.navItem )is used and nav is a variable as a type of "string"-->
+					<a href="#">{{nav}}</a>
+					<!--it will access the value one by one -->
+				</li>
+			</ul>
+		</div>
+
+	</div>
 </nav>
 <div ng-include="hc.loadTemplate"></div>
-
-
