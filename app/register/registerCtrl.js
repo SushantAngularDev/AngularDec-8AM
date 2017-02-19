@@ -1,9 +1,7 @@
 (function () {
 	function registerCtrl(lookupSvc) {
 		var vm = this;
-		vm.user = {
-			firstName: ""
-		};
+		
 		/* DatePicker Object*/
 		vm.dob = {
 			format: "MM/dd/yyyy",
@@ -27,6 +25,9 @@
                 mode = data.mode;
             return mode === 'day' && (date.getDay() === 0 || date.getDay() === 6);
         }
+		vm.user = {
+			firstName: ""
+		};
 		
 		vm.register = function () {
 				console.log(vm.user);
