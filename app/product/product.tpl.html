@@ -1,6 +1,6 @@
 <div ng-controller="productsCtrl as pc">
-    <div class="row">
-        <!-- <div class="col-xs-6">
+	<div class="row">
+		<!-- <div class="col-xs-6">
             <div class="thumbnail">
                 <img src="../images/{{item.image}}" alt="Sample Image">
                 <div class="caption">
@@ -10,34 +10,34 @@
                 </div>
             </div>
         </div>-->
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>S.No</th>
-                    <th>Model</th>
-                    <th>Description</th>
-                    <th><a href="#" ng-click="pc.orderByPrice()">Price <i class="glyphicon glyphicon-sort"></i></a></th>
-                    <th><a href="#" ng-click="pc.showMore()">Show More</a></th>
-                </tr>
-            </thead>
-            <tr ng-repeat="item in pc.products|limitTo:pc.minimumProducts |orderBy:pc.orderByCrietria">
-                <td>
-                    {{item.index}}
-                </td>
-                <td>
-                    {{item.Model}}
-                </td>
-                <td>
-                    {{item.Description}}
-                </td>
-                <td>
-                    {{item.Price|currency :"Rs."}}
-                </td>
-                   <td>
-                   <button class="btn btn-info">Add To cart</button>
-                </td>
-
-            </tr>
-        </table>
-    </div>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>S.No</th>
+					<th>Model</th>
+					<th>Description</th>
+					<th><a href="#" ng-click="pc.orderByPrice()">Price <i class="glyphicon glyphicon-sort"></i></a></th>
+					<th><a href="#" ng-click="pc.showMore()">Show More</a></th>
+				</tr>
+			</thead>
+			<tr ng-repeat="item in pc.products|limitTo:pc.minimumProducts |orderBy:pc.orderByCrietria">
+				<td> {{item.index}} </td>
+				<td> {{item.Model}} </td>
+				<td> {{item.Description}} </td>
+				<td> {{item.Price|currency :"Rs."}} </td>
+				<td>
+					<button class="btn btn-info">Add To cart</button>
+				</td>
+			</tr>
+		</table>
+	</div>
+	
+      <ul uib-pagination 
+          total-items="pc.paginate.totalProductCount"
+          ng-model="pc.paginate.currentPage"
+          max-size="pc.paginate.maxSize"
+          class="pagination-sm" 
+          boundary-link-numbers="true" 
+          rotate="false"
+          ng-click="pc.loadPaginatedProducts()"></ul>
 </div>

@@ -1,7 +1,7 @@
 (function () {
 	function registerCtrl(lookupSvc) {
 		var vm = this;
-		
+
 		/* DatePicker Object*/
 		vm.dob = {
 			format: "MM/dd/yyyy",
@@ -9,26 +9,27 @@
 				opened: false
 			},
 			dateOptions: {
-				dateDisabled: disabled ,
+				dateDisabled: disabled,
 				formatYear: 'yy',
 				maxDate: new Date(2017, 5, 22),
 				minDate: new Date(),
 				startingDay: 1
 			},
 		};
-		
+
 		vm.open1 = function () {
-            vm.dob.popup1.opened = true;
-        };
+			vm.dob.popup1.opened = true;
+		};
+
 		function disabled(data) {
-            var date = data.date,
-                mode = data.mode;
-            return mode === 'day' && (date.getDay() === 0 || date.getDay() === 6);
-        }
+			var date = data.date,
+				mode = data.mode;
+			return mode === 'day' && (date.getDay() === 0 || date.getDay() === 6);
+		}
 		vm.user = {
 			firstName: ""
 		};
-		
+
 		vm.register = function () {
 				console.log(vm.user);
 			}
