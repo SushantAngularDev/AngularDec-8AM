@@ -7,5 +7,5 @@
     })
     .run(function(){
         console.log("i am common run() method..");
-    });
+		});
 })();

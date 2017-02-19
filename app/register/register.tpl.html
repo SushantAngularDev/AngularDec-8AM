@@ -1,194 +1,90 @@
 <form name="registerForm" class="form-horizontal" ng-controller="registerCtrl as rc">
-    <div class="form-group">
-        <label class="control-label col-xs-2">First Name</label>
-        <div class="col-xs-10">
-            <input type="text"
-				   name="firstName"
-				   required
-                   ng-required="true"
-                   ng-pattern ="/^[a-zA-Z \s]+$/"
-                   ng-model="rc.user.firstName"
-                   class="form-control"  placeholder="First Name">
-			<p ng-style="rc.errMsg"
-			   ng-show="registerForm.firstName.$error.required&&registerForm.firstName.$dirty">
-				First Name Required</p>
-			<p ng-style="rc.errMsg" ng-show="registerForm.firstName.$error.pattern">
-				* Please Enter Valid Name</p>
-        </div>
-    </div>
-    
-    <div class="form-group">
-        <label class="control-label col-xs-2">Last Name</label>
-        <div class="col-xs-10">
-            <input type="text"
-				   name="lastName"
-				   required
-                   ng-required="true"
-                   ng-pattern ="/^[a-zA-Z \s]+$/"
-                   ng-model="rc.user.lastName"
-                   class="form-control"  placeholder="Last Name">
-			<p ng-style="rc.errMsg"
-			   ng-show="registerForm.lastName.$error.required&&registerForm.lastName.$dirty">
-				Last Name Required</p>
-			<p ng-style="rc.errMsg" ng-show="registerForm.lastName.$error.pattern">
-				Please Enter Valid Last Name</p>
-        </div>
-    </div>
-    
 	<div class="form-group">
-        <label class="control-label col-xs-2">Mobile No</label>
-        <div class="col-xs-10">
-            <input type="text"
-				   name="mobileNo"
-				   required
-                   cm-numbers-only
-                   maxnumbers="10"
-                   ng-model="rc.user.mobileNo"
-                   class="form-control"  placeholder="* Mobile No">
-			<p ng-style="rc.errMsg"
-			   ng-show="registerForm.mobileNo.$error.required&&registerForm.mobileNo.$dirty">
-				* Mobile Number is required</p>
-			
-        </div>
-    </div>
-	
+		<label class="control-label col-xs-2">First Name</label>
+		<div class="col-xs-10">
+			<input type="text" name="firstName" required ng-required="true" ng-pattern="/^[a-zA-Z \s]+$/" ng-model="rc.user.firstName" class="form-control" placeholder="First Name">
+			<p ng-style="rc.errMsg" ng-show="registerForm.firstName.$error.required&&registerForm.firstName.$dirty"> First Name Required</p>
+			<p ng-style="rc.errMsg" ng-show="registerForm.firstName.$error.pattern"> * Please Enter Valid Name</p>
+		</div>
+	</div>
 	<div class="form-group">
-        <label class="control-label col-xs-2">Pin Code</label>
-        <div class="col-xs-10">
-            <input type="text"
-				   name="pinCode"
-				   required
-                   cm-numbers-only
-                   maxnumbers="6"
-                   ng-model="rc.user.pinCode"
-                   class="form-control"  placeholder="* Pin Code">
-			<p ng-style="rc.errMsg"
-			   ng-show="registerForm.pinCode.$error.required&&registerForm.pinCode.$dirty">
-				* postal code is required</p>
-        </div>
-    </div>
-		
+		<label class="control-label col-xs-2">Last Name</label>
+		<div class="col-xs-10">
+			<input type="text" name="lastName" required ng-required="true" ng-pattern="/^[a-zA-Z \s]+$/" ng-model="rc.user.lastName" class="form-control" placeholder="Last Name">
+			<p ng-style="rc.errMsg" ng-show="registerForm.lastName.$error.required&&registerForm.lastName.$dirty"> Last Name Required</p>
+			<p ng-style="rc.errMsg" ng-show="registerForm.lastName.$error.pattern"> Please Enter Valid Last Name</p>
+		</div>
+	</div>
 	<div class="form-group">
-        <label class="control-label col-xs-2">Date Of Birth</label>
-        <div class="col-xs-10">
-            <input type="text"
-				   name="dateOfBirth"
-				   required
-                   cm-date-picker
-				   mindate={{rc.DobRange.mindate}}
-                   maxdate={{rc.DobRange.maxdate}}
-                   ng-model="rc.user.dateOfBirth"
-                   class="form-control"  placeholder="* Date of Birth">
-			<p ng-style="rc.errMsg"
-			   ng-show="registerForm.dateOfBirth.$error.required&&registerForm.dateOfBirth.$dirty">
-				* Please enter Your Date Of Birth</p>
-        </div>
-    </div>
-
-		<div class="form-group">
-        <label class="control-label col-xs-2">Date Of Reservation</label>
-        <div class="col-xs-10">
-            <input type="text"
-				   name="dateOfReservation"
-				   required
-                   cm-date-picker
-				   mindate={{rc.DoReserv.mindate}}
-                   maxdate={{rc.DoReserv.maxdate}}
-                   ng-model="rc.user.dateOfReservation"
-                   class="form-control"  placeholder="Date of Reservation">
-			<p ng-style="rc.errMsg"
-			   ng-show="registerForm.dateOfReservation.$error.required&&registerForm.dateOfReservation.$dirty">
-				* Please enter valid Reservation Date</p>
-        </div>
-    </div>
-
-	
-    <div class="form-group">
-        <label class="control-label col-xs-2">country</label>
-        <div class="col-xs-10">
-        <select class="form-control" name="selectedtCountry" required ng-model="rc.selectedtCountry"
-                ng-options="country.name+'-'+ country.code for country in rc.countries">
-        <option value="">Select Country</option>
-        </select>  {{rc.selectedtCountry}}
-        </div>
-    </div>
-    
-    <div class="form-group">
-        <label class="control-label col-xs-2">Gender</label>
-        <div class="col-xs-10">
-            <input type="radio" ng-model="rc.user.gender" 
-                   name="gender" value="M">Male
-            <input type="radio" name="gender" value="F"
-                   ng-model="rc.user.gender">Female   
-        </div>
-    </div>
-    
-	
-     <div class="form-group">
-        <label class="control-label col-xs-2">Password</label>
-        <div class="col-xs-10">
-            <input type="password" 
-				   name="password" 
-				   required
-				   ng-pattern="/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/"
-				   ng-model="rc.user.password" 
-				   class="form-control" 
-				    placeholder="*password"/>
-				<p ng-style="rc.errMsg"
-			   ng-show="registerForm.password.$error.required&&registerForm.password.$dirty">
-				you enter invalid password</p>
-			<p ng-style="rc.errMsg" ng-show="registerForm.password.$error.pattern">
-				* at least one number, one lowercase and one uppercase letter<br>
-                * at least six characters</p>
-        </div>
-    </div>
-    
-    
-	
-   <div class="form-group">
-        <div class="col-xs-offset-2 col-xs-10">
-            <div class="checkbox">
-                <label><input type="checkbox" ng-model="rc.user.agree"> I Agree Tems</label>
-            </div>
-        </div>
-    </div>
-    
-    
-    <div class="form-group">
-        <div class="col-xs-offset-2 col-xs-10">
-            <button type="submit" ng-click="rc.register()" class="btn btn-primary">Register</button>
-        </div>
-    </div>
-    {{rc.user}}
-    
-</form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		<label class="control-label col-xs-2">Mobile No</label>
+		<div class="col-xs-10">
+			<input type="text" name="mobileNo" required cm-numbers-only maxnumbers="10" ng-model="rc.user.mobileNo" class="form-control" placeholder="* Mobile No">
+			<p ng-style="rc.errMsg" ng-show="registerForm.mobileNo.$error.required&&registerForm.mobileNo.$dirty"> * Mobile Number is required</p>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-xs-2">Pin Code</label>
+		<div class="col-xs-10">
+			<input type="text" name="pinCode" required cm-numbers-only maxnumbers="6" ng-model="rc.user.pinCode" class="form-control" placeholder="* Pin Code">
+			<p ng-style="rc.errMsg" ng-show="registerForm.pinCode.$error.required&&registerForm.pinCode.$dirty"> * postal code is required</p>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-xs-2">Date Of Birth</label>
+		<div class="col-xs-10">
+			<input type="text" name="dateOfBirth" required cm-date-picker mindate={{rc.DobRange.mindate}} maxdate={{rc.DobRange.maxdate}} ng-model="rc.user.dateOfBirth" class="form-control" placeholder="* Date of Birth">
+			<p ng-style="rc.errMsg" ng-show="registerForm.dateOfBirth.$error.required&&registerForm.dateOfBirth.$dirty"> * Please enter Your Date Of Birth</p>
+		</div>
+	</div>
+	<!-- angular-ui datepicker -->
+	<div class="form-group">
+		<label class="control-label col-xs-2">Date Of Birth</label>
+		<p class="input-group">
+			<input type="text" class="form-control" ng-model="rc.user.dob" uib-datepicker-popup="{{rc.dob.format}}"  is-open="rc.dob.popup1.opened" datepicker-options="rc.dob.dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" placeholder="Date Of Birth" /> 
+			<span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="rc.open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+          </span> 
+		</p>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-xs-2">Date Of Reservation</label>
+		<div class="col-xs-10">
+			<input type="text" name="dateOfReservation" required cm-date-picker mindate={{rc.DoReserv.mindate}} maxdate={{rc.DoReserv.maxdate}} ng-model="rc.user.dateOfReservation" class="form-control" placeholder="Date of Reservation">
+			<p ng-style="rc.errMsg" ng-show="registerForm.dateOfReservation.$error.required&&registerForm.dateOfReservation.$dirty"> * Please enter valid Reservation Date</p>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-xs-2">country</label>
+		<div class="col-xs-10">
+			<select class="form-control" name="selectedtCountry" required ng-model="rc.selectedtCountry" ng-options="country.name+'-'+ country.code for country in rc.countries">
+				<option value="">Select Country</option>
+			</select> {{rc.selectedtCountry}} </div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-xs-2">Gender</label>
+		<div class="col-xs-10">
+			<input type="radio" ng-model="rc.user.gender" name="gender" value="M">Male
+			<input type="radio" name="gender" value="F" ng-model="rc.user.gender">Female </div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-xs-2">Password</label>
+		<div class="col-xs-10">
+			<input type="password" name="password" required ng-pattern="/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/" ng-model="rc.user.password" class="form-control" placeholder="*password" />
+			<p ng-style="rc.errMsg" ng-show="registerForm.password.$error.required&&registerForm.password.$dirty"> you enter invalid password</p>
+			<p ng-style="rc.errMsg" ng-show="registerForm.password.$error.pattern"> * at least one number, one lowercase and one uppercase letter
+				<br> * at least six characters</p>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-xs-offset-2 col-xs-10">
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" ng-model="rc.user.agree"> I Agree Tems</label>
+			</div>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-xs-offset-2 col-xs-10">
+			<button type="submit" ng-click="rc.register()" class="btn btn-primary">Register</button>
+		</div>
+	</div> {{rc.user}} </form>

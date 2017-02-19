@@ -1,9 +1,9 @@
-(function(){
-    
-    function loginCtrlFn(){
-        
-    }
-    
-    angular.module("login")
-    .controller("loginCtrl",[loginCtrlFn])
-})();
+(function () {
+
+	function loginCtrlFn() {
+
+	}
+
+	angular.module("login")
+		.controller("loginCtrl", [loginCtrlFn])
+})() 
